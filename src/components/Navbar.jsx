@@ -38,14 +38,14 @@ export default function Navbar() {
         aria-label='sidebar'
       >
         <div className='h-full px-3 py-4 overflow-y-auto bg-white'>
-          <a
-            href='https://flowbite.com/'
-            className='flex items-center pl-2.5 mb-5 bg-white'
+          <NavLink
+            to='/components/Home'
+            className='flex items-center bg-white justify-center'
           >
-            <span className='bg-white self-center text-xl font-semibold whitespace-nowrap'>
+            <span className='bg-white self-center text-[3.25rem] font-semibold whitespace-nowrap text-black'>
               RAINOVA
             </span>
-          </a>
+          </NavLink>
           <div className='bg-white'>
             <svg
               className='w-4 h-4 text-gray-500 bg-gray-50 relative left-[15px] top-[35px]'
@@ -65,35 +65,79 @@ export default function Navbar() {
             <input
               type='search'
               id='default-search'
-              className='block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-              placeholder='Search Mockups, Logos...'
+              className='shadow block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+              placeholder='Search ...'
               required
             />
             <button
               type='submit'
-              className='text-white relative left-[247px] bottom-[47px] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+              className='text-white relative left-[247px] bottom-[47px] bg-primary-100 hover:bg-primary-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
             >
               Search
             </button>
           </div>
           <ul className='space-y-2 font-medium bg-white'>
             <li className='m-3 bg-white'>
-              <a
-                href='#'
-                className='bg-white flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group'
+              <NavLink
+                to='/components/Home'
+                className='bg-white mb-3 flex items-center p-2 text-gray-900 rounded-lg hover:text-primary-200 hover:bg-gray-100 group'
               >
                 <svg
-                  className='w-5 h-5 bg-white text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
-                  aria-hidden='true'
                   xmlns='http://www.w3.org/2000/svg'
-                  fill='currentColor'
-                  viewBox='0 0 22 21'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  stroke='currentColor'
+                  className='mr-[20px] bg-transparent w-6 h-6 text-black transition duration-75'
                 >
-                  <path d='M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z' />
-                  <path d='M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z' />
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    d='M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25'
+                  />
                 </svg>
-                <span className='ml-3 bg-white'>Dashboard</span>
-              </a>
+                Home
+              </NavLink>
+              <NavLink
+                to='#'
+                className='bg-white mb-3 flex items-center p-2 text-gray-900 rounded-lg hover:text-primary-200 hover:bg-gray-100 group'
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  stroke='currentColor'
+                  className='mr-[20px] bg-transparent w-6 h-6 text-black transition duration-75'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    d='M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z'
+                  />
+                </svg>
+                Weather of the day
+              </NavLink>
+              <NavLink
+                to='#'
+                className='bg-white mb-3 flex items-center p-2 text-gray-900 rounded-lg hover:text-primary-200 hover:bg-gray-100 group'
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  stroke='currentColor'
+                  className='mr-[20px] bg-transparent w-6 h-6 text-black transition duration-75'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    d='M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z'
+                  />
+                </svg>
+                Weather of the week
+              </NavLink>
             </li>
           </ul>
         </div>
