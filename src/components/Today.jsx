@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 
 const api = {
@@ -7,6 +7,17 @@ const api = {
 };
 
 export default function Today() {
+  const [weather, setWeather] = useState({});
+
+  const handleSearch = (query) => {
+    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+      .then((res) => res.json())
+      .then((result) => {
+        setWeather(result);
+        console.log(result);
+      });
+  };
+
   const dateBuilder = (d) => {
     let months = [
       'January',
@@ -42,15 +53,22 @@ export default function Today() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar onSearch={handleSearch} />
       <div className='p-4 sm:ml-[22rem]'>
         <div>
-          <h1>Paris, FR</h1>
+          <h1>{weather.name}</h1>
         </div>
         <div>
-          <h3>{dateBuilder(new Date())}</h3>
+          <h5>{dateBuilder(new Date())}</h5>
         </div>
-        <div></div>
+        <div>
+          <div>
+            <h2>15°</h2>
+          </div>
+          <div>
+            <h3>Sunny</h3>
+          </div>
+        </div>
       </div>
     </div>
   );
