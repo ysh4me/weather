@@ -46,7 +46,7 @@ export default function Navbar() {
               RAINOVA
             </span>
           </NavLink>
-          <div className='bg-white'>
+          <div className='bg-white border-b'>
             <svg
               className='w-4 h-4 text-gray-500 bg-gray-50 relative left-[15px] top-[35px]'
               aria-hidden='true'
@@ -56,14 +56,14 @@ export default function Navbar() {
             >
               <path
                 stroke='currentColor'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
                 d='m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z'
               />
             </svg>
             <input
-              type='search'
+              type='text'
               id='default-search'
               className='shadow block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
               placeholder='Search ...'
@@ -86,53 +86,53 @@ export default function Navbar() {
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='currentColor'
                   className='mr-[20px] bg-transparent w-6 h-6 text-black transition duration-75'
                 >
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                     d='M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25'
                   />
                 </svg>
                 Home
               </NavLink>
               <NavLink
-                to='#'
+                to='/components/Today'
                 className='bg-white mb-3 flex items-center p-2 text-gray-900 rounded-lg hover:text-primary-200 hover:bg-gray-100 group'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='currentColor'
                   className='mr-[20px] bg-transparent w-6 h-6 text-black transition duration-75'
                 >
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                     d='M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z'
                   />
                 </svg>
                 Weather of the day
               </NavLink>
               <NavLink
-                to='#'
+                to='/components/Week'
                 className='bg-white mb-3 flex items-center p-2 text-gray-900 rounded-lg hover:text-primary-200 hover:bg-gray-100 group'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='currentColor'
                   className='mr-[20px] bg-transparent w-6 h-6 text-black transition duration-75'
                 >
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                     d='M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z'
                   />
                 </svg>
