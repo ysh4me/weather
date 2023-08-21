@@ -54,21 +54,40 @@ export default function Today() {
   return (
     <div>
       <Navbar onSearch={handleSearch} />
-      <div className='p-4 sm:ml-[22rem]'>
-        <div>
-          <h1>{weather.name}</h1>
-        </div>
-        <div>
-          <h5>{dateBuilder(new Date())}</h5>
-        </div>
-        <div>
+      <div className='p-4 sm:ml-[22rem] h-[400px]'>
+        {typeof weather.main != 'undefined' ? (
           <div>
-            <h2>15°</h2>
+            <div className='flex justify-center items-center'>
+              <h3>{dateBuilder(new Date())}</h3>
+            </div>
+            <div>
+              <div className='flex items-end pl-[60px]'>
+                <div>
+                  <h2 className='text-[190px] text-primary-100'>
+                    {Math.round(weather.main.temp)}°
+                  </h2>
+                </div>
+                <div className='relative right-[70px] bg-transparent'>
+                  <p className='text-[65px] bg-transparent'>
+                    {weather.weather[0].main}
+                  </p>
+                  <p className='pl-[6px] text-[20px]'>
+                    {weather.weather[0].description}
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div className='flex justify-end pr-[50px] relative bottom-[57px] bg-transparent'>
+                  <h1>
+                    {weather.name}, {weather.sys.country}
+                  </h1>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3>Sunny</h3>
-          </div>
-        </div>
+        ) : (
+          'Meteo'
+        )}
       </div>
     </div>
   );

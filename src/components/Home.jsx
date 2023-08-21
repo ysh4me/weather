@@ -5,7 +5,9 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <h1 className='p-4 sm:ml-[22rem]'>Home</h1>
+      <div className='p-4 sm:ml-[22rem]'>
+        <h1>Home</h1>
+      </div>
     </div>
   );
 }
