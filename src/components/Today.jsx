@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 
 const api = {
@@ -17,8 +17,18 @@ export default function Today() {
       .then((result) => {
         setWeather(result);
         console.log(result);
+        localStorage.setItem('weather', JSON.stringify(result));
+        localStorage.setItem('query', query);
       });
   };
+
+  useEffect(() => {
+    const query = localStorage.getItem('query');
+
+    if (query) {
+      handleSearch(query);
+    }
+  }, []);
 
   const dateBuilder = (d) => {
     let months = [
@@ -87,10 +97,51 @@ export default function Today() {
             <div>
               <h4 className='m-3 underline'>Today's highlights</h4>
             </div>
-            <div>
-              <div className='bg-white rounded-lg shadow w-[200px] h-[200px]'>
-                <p className='bg-white m-3 text-primary-300 pt-[6px] underline'>
+            <div className='flex flex-row flex-wrap gap-5 justify-center items-center ml-[100px] mr-[100px] mt-[30px]'>
+              <div className='bg-white rounded-[20px] shadow w-[200px] h-[200px]'>
+                <p className='bg-white m-4 text-primary-300 underline'>
                   Feels Like
+                </p>
+                <p className='bg-white text-primary-100 flex justify-center items-center text-[70px]'>
+                  {Math.round(weather.main.feels_like)}°
+                </p>
+              </div>
+              <div className='bg-white rounded-[20px] shadow w-[200px] h-[200px]'>
+                <p className='bg-white m-4 text-primary-300 underline'>
+                  Humidity
+                </p>
+                <p className='bg-white text-primary-100 flex justify-center items-center text-[70px]'>
+                  {weather.main.humidity}%
+                </p>
+              </div>
+              <div className='bg-white rounded-[20px] shadow w-[200px] h-[200px]'>
+                <p className='bg-white m-4 text-primary-300 underline'>
+                  Wind Speed
+                </p>
+                <p className='bg-white text-primary-100 flex justify-center items-center text-[70px]'>
+                  {Math.round(weather.wind.speed)} MPH
+                </p>
+              </div>
+              <div className='bg-white rounded-[20px] shadow w-[200px] h-[200px]'>
+                <p className='bg-white m-4 text-primary-300 underline'>
+                  Tempature min
+                </p>
+                <p className='bg-white text-primary-100 flex justify-center items-center text-[70px]'>
+                  {Math.round(weather.main.temp_min)}°
+                </p>
+              </div>
+              <div className='bg-white rounded-[20px] shadow w-[200px] h-[200px]'>
+                <p className='bg-white m-4 text-primary-300 underline'>
+                  Tempature max
+                </p>
+                <p className='bg-white text-primary-100 flex justify-center items-center text-[70px]'>
+                  {Math.round(weather.main.temp_max)}°
+                </p>
+              </div>
+              <div className='bg-white rounded-[20px] shadow w-[200px] h-[200px]'>
+                <p className='bg-white m-4 text-primary-300 underline'>Cloud</p>
+                <p className='bg-white text-primary-100 flex justify-center items-center text-[70px]'>
+                  {weather.clouds.all}%
                 </p>
               </div>
             </div>
